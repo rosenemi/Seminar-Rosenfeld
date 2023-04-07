@@ -31,4 +31,70 @@ public class Seminar{
       e.printStackTrace();
     }
   }
+    public void UploadProjects(){
+    try {
+      File myObj = new File("Project_Data.csv");
+      Scanner myReader = new Scanner(myObj);
+      while (myReader.hasNextLine()) {
+        String[] compS = myReader.nextLine().split(",");
+        String pName = compS[0];
+        int pNum = Integer.parseInt(compS[1]);
+        Project x = new Project(pName, pNum); //creates a new object, called student, for each line in the data file
+        Projects.add(x); // adds that People object to the array; the -1 is for indexing purposes
+      }
+      myReader.close();
+    }
+    catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
+  public void CalcInterest(){
+    int i = 0;
+    while (i < numS){
+      int add = stu[i].choice1 - 1;
+      if (add > -1){
+        interest[add] = interest[add] + 1;
+      }
+      i++;
+    }
+    i = 0;
+    while (i < numS){
+      int add = stu[i].choice2 - 1;
+      if (add > -1){
+        interest[add] = interest[add] + 1;
+      }
+      i++;
+    }
+    i = 0;
+    while (i < numS){
+      int add = stu[i].choice3 - 1;
+      if (add > -1){
+        interest[add] = interest[add] + 1;
+      }
+      i++;
+    }
+    i = 0;
+    while (i < numS){
+      int add = stu[i].choice4 - 1;
+      if (add > -1){
+        interest[add] = interest[add] + 1;
+      }
+      i++;
+    }
+    i = 0;
+    while (i < numS){
+      int add = stu[i].choice5 - 1;
+      if (add > -1){
+        interest[add] = interest[add] + 1;
+      }
+      i++; 
+    }
+    for (int x = 0; x < 18; x++){
+      System.out.println(interest[x]);
+    }
+  }
+  public void sort(){
+    
+  }
 }
