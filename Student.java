@@ -6,6 +6,7 @@ public class Student{
   int choice3;
   int choice4;
   int choice5;
+  int[] pSchedule = new int[5];
   public Student(String s, String n, int c1, int c2, int c3, int c4, int c5){
     studentID = s;
     name = n;
@@ -14,5 +15,11 @@ public class Student{
     choice3 = c3;
     choice4 = c4;
     choice5 = c5;
+  }
+  public int getSchedule(int h){
+    return pSchedule[h];
+  }
+  public void updateSchedule(int d, int c){
+    pSchedule[d] = c;
   }
 }
